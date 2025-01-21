@@ -1,4 +1,5 @@
 import 'package:clinic_booking/Core/Helper/on_generate_function.dart';
+import 'package:clinic_booking/Views/Splash/Presentation/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,8 +12,10 @@ class MyApp extends StatelessWidget {
    @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Emma Clincs',
        onGenerateRoute: onGenerateRoute,
+       initialRoute: SplashScreen.routeName,
     );
   }
 }
