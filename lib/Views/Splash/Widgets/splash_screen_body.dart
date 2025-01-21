@@ -40,61 +40,58 @@ class _SplashScreenBodyState extends State<SplashScreenBody>
     var h = MediaQuery.of(context).size.height;
     var w = MediaQuery.of(context).size.width;
 
-    return Scaffold(
-      backgroundColor: kPrimary,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(Assets.imagesLogo),
-          Container(
-            height: h * 0.1,
-            width: w,
-            decoration: BoxDecoration(
-              color: kPrimary2,
-              boxShadow: [
-                BoxShadow(
-                  color: kveryWhite,
-                  blurRadius: 50,
-                  spreadRadius: 2,
-                  offset: const Offset(0, 4),
-                ),
-              ],
-            ),
-            child: AnimatedBuilder(
-              animation: _animation,
-              builder: (context, child) {
-                return Transform.translate(
-                  offset: Offset(_animation.value * w, 0),
-                  child: OverflowBar(
-                    alignment: MainAxisAlignment.center,
-                    overflowAlignment: OverflowBarAlignment.center,
-                    children: [
-                      Text(
-                        'Emma Clinics',
-                        style: GoogleFonts.merriweather(
-                            color: kveryWhite,
-                            fontSize: w * 0.08,
-                            fontWeight: FontWeight.bold,
-                            fontStyle: FontStyle.italic),
-                      ),
-                      SizedBox(width: w * 0.06),
-                      Text(
-                        'Discover Your Inner Beauty',
-                        style: GoogleFonts.merriweather(
-                          color: kveryWhite,
-                          fontSize: w * 0.05,
-                          fontWeight: FontWeight.w700,
-                          fontStyle: FontStyle.italic,
-                        ),
-                      ),
-                    ],
-                  ),
-                );
-              },
-            ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Image.asset(Assets.imagesLogo),
+        Container(
+          height: h * 0.1,
+          width: w,
+          decoration: BoxDecoration(
+            color: kPrimary2,
+            boxShadow: [
+              BoxShadow(
+                color: kveryWhite,
+                blurRadius: 50,
+                spreadRadius: 2,
+                offset: const Offset(0, 4),
+              ),
+            ],
           ),
-        ],
-      ),
+          child: AnimatedBuilder(
+            animation: _animation,
+            builder: (context, child) {
+              return Transform.translate(
+                offset: Offset(_animation.value * w, 0),
+                child: OverflowBar(
+                  alignment: MainAxisAlignment.center,
+                  overflowAlignment: OverflowBarAlignment.center,
+                  children: [
+                    Text(
+                      'Emma Clinics',
+                      style: GoogleFonts.merriweather(
+                          color: kveryWhite,
+                          fontSize: w * 0.08,
+                          fontWeight: FontWeight.bold,
+                          fontStyle: FontStyle.italic),
+                    ),
+                    SizedBox(width: w * 0.06),
+                    Text(
+                      'Discover Your Inner Beauty',
+                      style: GoogleFonts.merriweather(
+                        color: kveryWhite,
+                        fontSize: w * 0.05,
+                        fontWeight: FontWeight.w700,
+                        fontStyle: FontStyle.italic,
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+        ),
+      ],
     );
   }
 
